@@ -1,16 +1,15 @@
-import app.decoder.IPResponse
+import com.app.decoder.IPDecoder
 import com.comcast.ip4s.IpAddress
-import org.scalatest.*
+import org.scalatest._
 import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers.should
+import org.scalatest.matchers.should.Matchers._
 
-object IPTest extends AnyFlatSpec {
-  private val ip = IpAddress.fromString("").get
-  private val ipResponse = IPResponse(ip)
+class IPResponseSpec extends AnyFlatSpec {
 
-  "A Stack" should "pop values in last-in-first-out order" in {
-   ipResponse.ip.toString should be ("0.0.0.0")
+  "An IPResponse" should "convert the IpAddress to string correctly" in {
+    val validIP = IpAddress.fromString("192.168.1.1").get
+    val validResponse = IPDecoder(validIP)
+    validResponse.ip.toString should be("192.168.1.1")
   }
-
-
 }
+
