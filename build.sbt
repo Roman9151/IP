@@ -2,7 +2,7 @@ ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "3.3.0"
 val circeVersion = "0.14.3"
-val http4sVersion = "0.23.22"
+val http4sVersion = "0.23.15"
 libraryDependencies += "com.comcast" %% "ip4s-core" % "3.2.0"
 libraryDependencies ++= Seq(
   "io.circe" %% "circe-core",
@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
 libraryDependencies ++= Seq(
-  "org.http4s" %% "http4s-ember-client" % http4sVersion,
+  "org.http4s" %% "http4s-blaze-client" % http4sVersion,
   "org.http4s" %% "http4s-circe" % http4sVersion,
 )
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.16"
